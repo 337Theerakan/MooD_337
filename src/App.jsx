@@ -1,17 +1,28 @@
 import { useState } from 'react';
 import './App.css';
 
+// Improved ImageButton component with fallback and accessibility
+// eslint-disable-next-line react/prop-types
 function ImageButton({ src, alt, onClick }) {
+  const handleClick = () => {
+    if (onClick) {
+      onClick(src); // Call the onClick function with the image source
+    }
+  };
+
   return (
     <img 
       className="button-image" 
       src={src} 
       alt={alt} 
-      onClick={() => onClick(src)} 
+      onClick={handleClick} 
+      onError={(e) => e.target.src = '/img/placeholder.jpg'} // Fallback image
+      aria-label={alt} // Adding accessibility label
     />
   );
 }
 
+// Main App component
 export default function App() {
   const [level, setLevel] = useState(1);
   const [message, setMessage] = useState('');
@@ -19,6 +30,7 @@ export default function App() {
   const [showSpecialImage, setShowSpecialImage] = useState(false);
   const maxLevel = 100;
 
+  // Function to get image source and message based on level
   const getImageAndMessage = (newLevel) => {
     if (newLevel >= maxLevel) {
       return { src: '/img/pig.jpg', message: 'หมูเด้งเเบบเด้งจริงๆ' };
@@ -78,7 +90,7 @@ export default function App() {
           className="main-image" 
           style={{ '--level': level }} 
           src={imageSrc} 
-          alt=" " 
+          alt="Main visual" 
           onClick={handleSpecialImageClick} 
         />
       </div>
