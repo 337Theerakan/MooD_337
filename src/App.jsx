@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './App.css';
 
-// Improved ImageButton component with fallback and accessibility
+// คอมโพเนนต์ ImageButton ที่ปรับปรุงแล้วพร้อมการสำรองและการเข้าถึง
 // eslint-disable-next-line react/prop-types
 function ImageButton({ src, alt, onClick }) {
   const handleClick = () => {
     if (onClick) {
-      onClick(src); // Call the onClick function with the image source
+      onClick(src); // เรียกใช้ฟังก์ชัน onClick พร้อมกับแหล่งที่มาของภาพ
     }
   };
 
@@ -16,13 +16,13 @@ function ImageButton({ src, alt, onClick }) {
       src={src} 
       alt={alt} 
       onClick={handleClick} 
-      onError={(e) => e.target.src = '/img/placeholder.jpg'} // Fallback image
-      aria-label={alt} // Adding accessibility label
+      onError={(e) => e.target.src = '/img/placeholder.jpg'} 
+      aria-label={alt}
     />
   );
 }
 
-// Main App component
+// คอมโพเนนต์หลัก App
 export default function App() {
   const [level, setLevel] = useState(1);
   const [message, setMessage] = useState('');
@@ -30,7 +30,6 @@ export default function App() {
   const [showSpecialImage, setShowSpecialImage] = useState(false);
   const maxLevel = 100;
 
-  // Function to get image source and message based on level
   const getImageAndMessage = (newLevel) => {
     if (newLevel >= maxLevel) {
       return { src: '/img/pig.jpg', message: 'หมูเด้งเเบบเด้งจริงๆ' };
