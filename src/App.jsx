@@ -22,7 +22,6 @@ function ImageButton({ src, alt, onClick }) {
   );
 }
 
-// คอมโพเนนต์หลัก App
 export default function App() {
   const [level, setLevel] = useState(1);
   const [message, setMessage] = useState('');
@@ -102,3 +101,4 @@ export default function App() {
     </div>
   );
 }
+//ผมไม่รู้ต้องเเก้ยังไงเเล้วครับ sad ทำได้เเค่นี้ครับ
