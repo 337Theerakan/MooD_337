@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './App.css';
 
-// คอมโพเนนต์ ImageButton ที่ปรับปรุงแล้วพร้อมการสำรองและการเข้าถึง
+// 
 // eslint-disable-next-line react/prop-types
 function ImageButton({ src, alt, onClick }) {
   const handleClick = () => {
     if (onClick) {
-      onClick(src); // เรียกใช้ฟังก์ชัน onClick พร้อมกับแหล่งที่มาของภาพ
+      onClick(src); 
     }
   };
 
