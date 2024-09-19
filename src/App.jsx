@@ -25,19 +25,19 @@ function ImageButton({ src, alt, onClick }) {
 export default function App() {
   const [level, setLevel] = useState(1);
   const [message, setMessage] = useState('');
-  const [imageSrc, setImageSrc] = useState('../img/H1.jpg');
+  const [imageSrc, setImageSrc] = useState('./img/H1.jpg');
   const [showSpecialImage, setShowSpecialImage] = useState(false);
   const maxLevel = 100;
 
   const getImageAndMessage = (newLevel) => {
     if (newLevel >= maxLevel) {
-      return { src: '../img/pig.jpg', message: 'หมูเด้งเเบบเด้งจริงๆ' };
+      return { src: './img/pig.jpg', message: 'หมูเด้งเเบบเด้งจริงๆ' };
     } else if (newLevel >= 50) {
-      return { src: '../img/H3.jpg', message: 'หมูเด้งระดับกลาง' };
+      return { src: './img/H3.jpg', message: 'หมูเด้งระดับกลาง' };
     } else if (newLevel <= 0) {
-      return { src: '../img/Sad.jpg', message: 'นอนโลงแล้ว' };
+      return { src: './img/Sad.jpg', message: 'นอนโลงแล้ว' };
     } else {
-      return { src: '../img/H1.jpg', message: 'หมูยังไม่เด้ง' };
+      return { src: './img/H1.jpg', message: 'หมูยังไม่เด้ง' };
     }
   };
 
@@ -45,14 +45,14 @@ export default function App() {
     let newLevel = level;
 
     switch (src) {
-      case "../img/sumtu.jpg": 
+      case "./img/sumtu.jpg": 
         newLevel = 0; 
         setShowSpecialImage(false);
         break;
-      case "../img/tomatoes.jpg": 
+      case "./img/tomatoes.jpg": 
         newLevel = Math.min(level + 10, maxLevel);
         break;
-      case "../img/pineapple.jpg": 
+      case "./img/pineapple.jpg": 
         newLevel = Math.min(level + 20, maxLevel);
         break;
       default:
@@ -73,7 +73,7 @@ export default function App() {
 
   const handleSpecialImageClick = () => {
     if (showSpecialImage) {
-      setImageSrc('../img/sc.jpg');
+      setImageSrc('./img/sc.jpg');
       setMessage('สวัสดีครับโผมม "หมูเด้งหมดแล้วนะคับโผมมมม" '); 
       setShowSpecialImage(false); 
     }
@@ -93,10 +93,10 @@ export default function App() {
         />
       </div>
       <div className="button-container">
-        <ImageButton src="../img/gree.jpg" alt="หญ้า" onClick={handleLevelUp} />
-        <ImageButton src="../img/tomatoes.jpg" alt="มะเขือเทศ" onClick={handleLevelUp} />
-        <ImageButton src="../img/pineapple.jpg" alt="สับปะรด" onClick={handleLevelUp} />
-        <ImageButton src="../img/sumtu.jpg" alt="ย้อน" onClick={handleLevelUp} />
+        <ImageButton src="./img/gree.jpg" alt="หญ้า" onClick={handleLevelUp} />
+        <ImageButton src="./img/tomatoes.jpg" alt="มะเขือเทศ" onClick={handleLevelUp} />
+        <ImageButton src="./img/pineapple.jpg" alt="สับปะรด" onClick={handleLevelUp} />
+        <ImageButton src="./img/sumtu.jpg" alt="ย้อน" onClick={handleLevelUp} />
       </div>
     </div>
   );
