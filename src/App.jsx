@@ -35,7 +35,7 @@ export default function App() {
     } else if (newLevel >= 50) {
       return { src: '/img/H3.jpg', message: 'หมูเด้งระดับกลาง' };
     } else if (newLevel <= 0) {
-      return { src: '/img/dead.jpg', message: 'นอนโลงแล้ว' };
+      return { src: '/img/Sad.jpg', message: 'นอนโลงแล้ว' };
     } else {
       return { src: '/img/H1.jpg', message: 'หมูยังไม่เด้ง' };
     }
@@ -45,7 +45,7 @@ export default function App() {
     let newLevel = level;
 
     switch (src) {
-      case "/img/time.jpg": 
+      case "/img/sumtu.jpg": 
         newLevel = 0; 
         setShowSpecialImage(false);
         break;
@@ -96,9 +96,9 @@ export default function App() {
         <ImageButton src="/img/gree.jpg" alt="หญ้า" onClick={handleLevelUp} />
         <ImageButton src="/img/tomatoes.jpg" alt="มะเขือเทศ" onClick={handleLevelUp} />
         <ImageButton src="/img/pineapple.jpg" alt="สับปะรด" onClick={handleLevelUp} />
-        <ImageButton src="/img/time.jpg" alt="ย้อน" onClick={handleLevelUp} />
+        <ImageButton src="/img/sumtu.jpg" alt="ย้อน" onClick={handleLevelUp} />
       </div>
     </div>
   );
 }
-//ผมไม่รู้ต้องเเก้ยังไงเเล้วครับ sad ทำได้เเค่นี้ครับ
+//ผมไม่รู้ต้องเเก้ยังไงเเล้วครับ sad ทำได้เเค่นี้ครับใส่รูปที่ img เเล้วรูปไม่เเสดงใน Vercel 
